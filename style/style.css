@@ -1,0 +1,118 @@
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- typography ---- */
+
+body {
+  color: #111;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  height: 3px;
+  border: none;
+  background-color: grey;
+}
+
+i {
+  margin-left: 8px;
+}
+
+/* ---- layout ---- */
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px;
+  background-color: lightgray;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 0;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: grey 10px 10px 20px;
+}
+
+.content-area {
+  max-width: 760px;
+  margin: 18px auto;
+}
+
+
+/* ---- components ---- */
+
+#input {
+  width: 89%;
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+#search-btn {
+  width: 10%;
+  padding: 8px 4px;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+
+.user-info {
+  display: flex;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 18px;
+}
+
+.repo {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  padding: 18px;
+}
+
+.succes {
+  display: none;
+}
+
+.error {
+  background-color: #fcdbdc;
+  color: #990000;
+  border: 1px solid #990000;
+  padding: 8px;
+  border-radius: 4px;
+  display: none;
+}
+
+
+/* modifier classes */
+
+.is-visible {
+  display: block;
+}
