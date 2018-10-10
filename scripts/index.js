@@ -3,20 +3,25 @@ const searchBtn = document.getElementById("search-btn");
 const userInfoBox = document.querySelector(".succes");
 const errorBox = document.querySelector(".error");
 const parent = document.querySelector(".repos");
+const clientId = '7b64e29b7a19f6c1d9f5';
+const clientSecret = '38b39ee8d79daa2a926ef8bcf1a185e6c2b87e15';
 
+searchBtn.addEventListener("click", handleClick);
 
-searchBtn.addEventListener("click", () => {
+function handleClick() {
   let username = input.value;
   parent.innerHTML = '';
+  userInfoBox.classList.remove('is-visible');
   errorBox.classList.remove('is-visible');
-  
-  if(username){
-    getUsers(username)
-  }
-});
 
-function getUsers(username) {
-  fetch(`http://api.github.com/users/${username}`)
+  if(username){
+    getUser(username)
+  }
+}
+
+function getUser(id) {
+  let url = `http://api.github.com/users/${id}`
+  fetch(`${url}?client_id=${clientId}&client_secret=${clientSecret}`)
   .then(data => data.json())
   .then(result => result.login ? printUserInfo(result) : printError())
   .catch(err => console.log(err.toString()))
@@ -39,7 +44,7 @@ function printUserInfo(user) {
 
 function getRepos(user) {
   let url = `https://api.github.com/users/${user.login}/repos`;
-  fetch(url)
+  fetch(`${url}?client_id=${clientId}&client_secret=${clientSecret}`)
   .then(data => data.json())
   .then(result => {
     result.forEach(repo => {
